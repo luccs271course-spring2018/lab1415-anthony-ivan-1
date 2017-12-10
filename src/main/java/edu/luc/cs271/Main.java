@@ -54,13 +54,39 @@ public class Main {
     myMap.addEdge(NL, BL);
     myMap.addEdge(LU, BL);
 
-    // System.out.println(myMap.toString());
+    // Graph print
+    System.out.println("Graph to String:");
+    System.out.println(myMap.toString());
 
-    // next
-
+    // BreadthFirst
+    System.out.println("\nBreadthFirst:");
     final Iterator<String> bf = new BreadthFirstIterator<>(myMap, DE);
     while (bf.hasNext()) {
       final String country = bf.next();
+      System.out.println(country);
+    }
+
+    // ClosestFirst
+    System.out.println("\nClosestFirst:");
+    final Iterator<String> cf = new ClosestFirstIterator<>(myMap, DE);
+    while (cf.hasNext()) {
+      final String country = cf.next();
+      System.out.println(country);
+    }
+
+    // DepthFirst
+    System.out.println("\nDepthFirst:");
+    final Iterator<String> df = new DepthFirstIterator<>(myMap, DE);
+    while (df.hasNext()) {
+      final String country = df.next();
+      System.out.println(country);
+    }
+
+    // RandomWalk
+    System.out.println("\nRandomWalk:");
+    final Iterator<String> rw = new RandomWalkIterator<>(myMap, DE, false, 10);
+    while (rw.hasNext()) {
+      final String country = rw.next();
       System.out.println(country);
     }
   }
