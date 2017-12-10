@@ -10,4 +10,6 @@ public class CountryCodes {
   static final String LU = "Luxembourg";
   static final String FR = "France";
   static final String CH = "Switzerland";
+
+  public static void CountryCodes() {}
 }
