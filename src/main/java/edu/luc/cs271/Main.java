@@ -3,6 +3,7 @@ import org.jgrapht.graph.*;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.traverse.*;
+import org.jgrapht.alg.color;
 
 public class Main {
 
@@ -58,6 +59,7 @@ public class Main {
     System.out.println("Graph to String:");
     System.out.println(myMap.toString());
 
+    System.out.println("\n**Germany Start Point**");
     // BreadthFirst
     System.out.println("\nBreadthFirst:");
     final Iterator<String> bf = new BreadthFirstIterator<>(myMap, DE);
@@ -87,6 +89,39 @@ public class Main {
     final Iterator<String> rw = new RandomWalkIterator<>(myMap, DE, false, 10);
     while (rw.hasNext()) {
       final String country = rw.next();
+      System.out.println(country);
+    }
+
+    System.out.println("\n**Alternate Start Point**");
+    // BreadthFirst
+    System.out.println("\nBreadthFirst:");
+    final Iterator<String> bf2 = new BreadthFirstIterator<>(myMap, FR);
+    while (bf2.hasNext()) {
+      final String country = bf2.next();
+      System.out.println(country);
+    }
+
+    // ClosestFirst
+    System.out.println("\nClosestFirst:");
+    final Iterator<String> cf2 = new ClosestFirstIterator<>(myMap, FR);
+    while (cf2.hasNext()) {
+      final String country = cf2.next();
+      System.out.println(country);
+    }
+
+    // DepthFirst
+    System.out.println("\nDepthFirst:");
+    final Iterator<String> df2 = new DepthFirstIterator<>(myMap, FR);
+    while (df2.hasNext()) {
+      final String country = df2.next();
+      System.out.println(country);
+    }
+
+    // RandomWalk
+    System.out.println("\nRandomWalk:");
+    final Iterator<String> rw2 = new RandomWalkIterator<>(myMap, FR, false, 10);
+    while (rw2.hasNext()) {
+      final String country = rw2.next();
       System.out.println(country);
     }
   }
