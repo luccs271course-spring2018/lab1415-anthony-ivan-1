@@ -1,6 +1,8 @@
+import java.util.*;
 import org.jgrapht.graph.*;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
+import org.jgrapht.traverse.*;
 
 public class Main {
 
@@ -52,6 +54,14 @@ public class Main {
     myMap.addEdge(NL, BL);
     myMap.addEdge(LU, BL);
 
-    System.out.println(myMap.toString());
+    // System.out.println(myMap.toString());
+
+    // next
+
+    final Iterator<String> bf = new BreadthFirstIterator<>(myMap, DE);
+    while (bf.hasNext()) {
+      final String country = bf.next();
+      System.out.println(country);
+    }
   }
 }
