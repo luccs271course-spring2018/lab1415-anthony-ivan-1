@@ -1,4 +1,3 @@
-import org.jgrapht.*;
 import org.jgrapht.graph.*;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
@@ -18,7 +17,7 @@ public class Main {
 
   public static void main(String[] args) {
 
-    final Graph<String, DefaultEdge> myMap = new SimpleGraph<>(DefaultEdge.class);
+    final SimpleGraph<String, DefaultEdge> myMap = new SimpleGraph<>(DefaultEdge.class);
     myMap.addVertex(AT);
     myMap.addVertex(DE);
     myMap.addVertex(CZ);
@@ -52,5 +51,7 @@ public class Main {
     // Belgium
     myMap.addEdge(NL, BL);
     myMap.addEdge(LU, BL);
+
+    System.out.println(myMap.toString());
   }
 }
