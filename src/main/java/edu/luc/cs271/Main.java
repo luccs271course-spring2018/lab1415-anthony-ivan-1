@@ -1,9 +1,10 @@
 import java.util.*;
+import org.jgrapht.alg.color.GreedyColoring;
+import org.jgrapht.alg.interfaces.*;
 import org.jgrapht.graph.*;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.traverse.*;
-import org.jgrapht.alg.color;
 
 public class Main {
 
@@ -123,6 +124,17 @@ public class Main {
     while (rw2.hasNext()) {
       final String country = rw2.next();
       System.out.println(country);
+    }
+
+    // GreedyColoring
+
+    System.out.println("\nGreedyColoring: ");
+    GreedyColoring<String, DefaultEdge> gc = new GreedyColoring<String, DefaultEdge>(myMap);
+    final Iterator<Map.Entry<String, Integer>> gcIterator =
+        gc.getColoring().getColors().entrySet().iterator();
+    while (gcIterator.hasNext()) {
+      final Map.Entry<String, Integer> color = gcIterator.next();
+      System.out.println(color.getKey() + " = " + color.getValue());
     }
   }
 }
