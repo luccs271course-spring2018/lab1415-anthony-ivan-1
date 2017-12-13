@@ -9,9 +9,9 @@ import org.jgrapht.traverse.*;
 public class Main {
 
   public static void main(String[] args) {
-  
-  CountryCodes county = new CountryCodes();
-  String[] country = county.countries();
+
+    CountryCodes county = new CountryCodes();
+    String[] country = county.countries();
 
     final SimpleGraph<String, DefaultEdge> myMap = new SimpleGraph<>(DefaultEdge.class);
     myMap.addVertex(country[0]);

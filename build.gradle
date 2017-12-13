@@ -45,8 +45,4 @@ run {
 
 googleJavaFormat {
     toolVersion = '1.4'
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin
